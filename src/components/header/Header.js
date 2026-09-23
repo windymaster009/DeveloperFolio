@@ -7,6 +7,7 @@ import {
   greeting,
   workExperiences,
   skillsSection,
+  educationInfo,
   openSource,
   blogSection,
   talkSection,
@@ -30,6 +31,7 @@ function Header() {
         </label>
         <ul className={isDark ? "dark-menu menu" : "menu"}>
           {skillsSection.display && <li><a href="#skills">Skills</a></li>}
+          {educationInfo.display && <li><a href="#education">Education</a></li>}
           <li><a href="#github-stats">GitHub Stats</a></li>
           {workExperiences.display && <li><a href="#experience">Work Experiences</a></li>}
           {openSource.display && <li><a href="#opensource">Open Source</a></li>}
