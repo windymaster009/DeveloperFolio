@@ -45,9 +45,73 @@ Edit `data/site.ts` to change the hero text, featured repositories, social links
 
 GitHub data is refreshed through Next.js server caching, so new public projects and detected technologies appear automatically after the cache refresh.
 
-## Deploy
+## Raspberry Pi deployment
 
-Vercel is the easiest option:
+The repository includes a production configuration for Raspberry Pi + PM2.
+
+Requirements:
+
+- Node.js 20 or newer
+- Git
+- PM2
+- GitHub access to this repository (the repo is currently private)
+
+Recommended first-time setup:
+
+```bash
+sudo apt update
+sudo apt install -y git
+
+node -v
+npm -v
+
+sudo npm install -g pm2
+pm2 startup
+```
+
+Authenticate the Pi with GitHub using SSH or GitHub CLI, then clone:
+
+```bash
+cd ~
+git clone git@github.com:windymaster009/DeveloperFolio.git
+cd DeveloperFolio
+chmod +x scripts/deploy-pi.sh
+./scripts/deploy-pi.sh
+```
+
+The production server listens on:
+
+```text
+http://0.0.0.0:3030
+```
+
+Useful PM2 commands:
+
+```bash
+pm2 status
+pm2 logs developerfolio
+pm2 restart developerfolio
+pm2 save
+```
+
+For later updates:
+
+```bash
+cd ~/DeveloperFolio
+./scripts/deploy-pi.sh
+```
+
+The build uses Next.js standalone output and sets a conservative Node.js heap limit for the Raspberry Pi 4 2GB environment.
+
+If you use Cloudflare Tunnel, point your portfolio hostname to:
+
+```text
+http://localhost:3030
+```
+
+## Vercel deployment
+
+Vercel also works:
 
 1. Import this repository into Vercel.
 2. Optionally add `GITHUB_TOKEN` as a server-side environment variable.
