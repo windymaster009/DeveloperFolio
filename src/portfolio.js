@@ -1,5 +1,6 @@
 /* Kevin Nhim's DeveloperFolio
  * Based on saadpasta/developerFolio (GPL-3.0).
+ * Modified for Kevin Nhim / Windy.
  */
 
 import emoji from "react-easy-emoji";
@@ -8,7 +9,7 @@ import splashAnimation from "./assets/lottie/splashAnimation";
 const splashScreen = {
   enabled: true,
   animation: splashAnimation,
-  duration: 1800
+  duration: 2000
 };
 
 const illustration = {
@@ -19,20 +20,22 @@ const greeting = {
   username: "Kevin Nhim",
   title: "Hi all, I'm Kevin",
   subTitle: emoji(
-    "A passionate Software Developer 🚀 building payment platforms, web applications, Telegram and Discord bots, automation tools, APIs, and Raspberry Pi/self-hosted systems with JavaScript, TypeScript, Python, Node.js, React, MongoDB and more."
+    "A passionate Software Developer 🚀 from Cambodia building web applications, backend services, payment-platform features, Telegram and Discord bots, automation tools, APIs, and Raspberry Pi/self-hosted systems."
   ),
-  resumeLink: "",
+  resumeLink:
+    "https://github.com/windymaster009/kevin.github.io/raw/main/CV.pdf",
   displayGreeting: true
 };
 
 const socialMediaLinks = {
   github: "https://github.com/windymaster009",
   linkedin: "",
-  gmail: "",
+  gmail: "Kevinnhim123@gmail.com",
   gitlab: "",
   facebook: "",
   instagram: "",
-  twitter: "",
+  twitter: "https://x.com/nhimkevins",
+  telegram: "https://t.me/nhimkevin",
   medium: "",
   stackoverflow: "",
   kaggle: "",
@@ -42,23 +45,34 @@ const socialMediaLinks = {
 const skillsSection = {
   title: "What I do",
   subTitle:
-    "SOFTWARE DEVELOPER WHO LOVES BACKEND, AUTOMATION, FULL STACK APPLICATIONS AND SYSTEMS",
+    "SOFTWARE DEVELOPER WHO ENJOYS BUILDING REAL PRODUCTS, AUTOMATION AND SELF-HOSTED SYSTEMS",
   skills: [
-    emoji("⚡ Build backend services, REST APIs, integrations and real-world business workflows"),
-    emoji("⚡ Create full-stack web applications, dashboards, bots and automation tools"),
-    emoji("⚡ Deploy and operate applications on Linux and Raspberry Pi with PM2, tunnels and cloud services"),
-    emoji("⚡ Work with databases, queues, payment flows, Telegram/Discord APIs and external services")
+    emoji(
+      "⚡ Build backend services, REST APIs, integrations, transaction workflows and operational tools"
+    ),
+    emoji(
+      "⚡ Develop responsive full-stack web applications, dashboards and admin/merchant interfaces"
+    ),
+    emoji(
+      "⚡ Create Telegram and Discord bots, automation workflows, payment listeners and queue-based systems"
+    ),
+    emoji(
+      "⚡ Deploy and operate applications on Linux and Raspberry Pi using PM2, Cloudflare Tunnel and Tailscale"
+    )
   ],
   softwareSkills: [
     {skillName: "JavaScript", fontAwesomeClassname: "fab fa-js"},
     {skillName: "TypeScript", fontAwesomeClassname: "fas fa-code"},
-    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
-    {skillName: "Node.js", fontAwesomeClassname: "fab fa-node-js"},
     {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
+    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
+    {skillName: "PHP", fontAwesomeClassname: "fab fa-php"},
     {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
     {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt"},
-    {skillName: "PHP", fontAwesomeClassname: "fab fa-php"},
-    {skillName: "Database", fontAwesomeClassname: "fas fa-database"},
+    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
+    {skillName: "Node.js", fontAwesomeClassname: "fab fa-node-js"},
+    {skillName: "Vue.js", fontAwesomeClassname: "fab fa-vuejs"},
+    {skillName: "Laravel", fontAwesomeClassname: "fab fa-laravel"},
+    {skillName: "MongoDB / DB", fontAwesomeClassname: "fas fa-database"},
     {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
     {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
     {skillName: "Git", fontAwesomeClassname: "fab fa-git-alt"},
@@ -70,8 +84,35 @@ const skillsSection = {
 };
 
 const educationInfo = {
-  display: false,
-  schools: []
+  display: true,
+  schools: [
+    {
+      schoolName: "National Polytechnic Institute of Cambodia",
+      logo: require("./assets/images/npicLogo.svg"),
+      subHeader: "Computer Science",
+      duration: "2020 - 2024",
+      desc:
+        "Studied Computer Science while expanding practical experience in software development, IT support and systems.",
+      descBullets: [
+        "Web development, programming, databases and software engineering",
+        "Built personal projects across JavaScript, Python, Java, PHP and modern web stacks"
+      ]
+    },
+    {
+      schoolName: "Paññāsāstra University of Cambodia",
+      logo: require("./assets/images/pucLogo.svg"),
+      subHeader: "Loyola School",
+      duration: "2018 - 2020",
+      desc: "Secondary education before continuing into Computer Science."
+    },
+    {
+      schoolName: "Phnom Penh Thmey High School",
+      logo: require("./assets/images/schoolLogo.svg"),
+      subHeader: "High School",
+      duration: "2007 - 2019",
+      desc: "Earlier general education in Phnom Penh, Cambodia."
+    }
+  ]
 };
 
 const techStack = {
@@ -79,8 +120,8 @@ const techStack = {
   experience: [
     {Stack: "Backend / APIs", progressPercentage: "92%"},
     {Stack: "Automation / Bots", progressPercentage: "90%"},
-    {Stack: "Frontend / Full Stack", progressPercentage: "82%"},
-    {Stack: "Linux / Self-hosting", progressPercentage: "84%"}
+    {Stack: "Frontend / Full Stack", progressPercentage: "84%"},
+    {Stack: "Linux / Self-hosting", progressPercentage: "86%"}
   ],
   displayCodersrank: false
 };
@@ -90,28 +131,42 @@ const workExperiences = {
   experience: [
     {
       role: "Software Developer",
-      company: "Fintech & Payment Platform",
+      company: "Payment Platform",
       companylogo: require("./assets/images/fintechLogo.svg"),
       date: "Current",
       desc:
-        "Building and maintaining production payment-platform features across backend services and web interfaces.",
+        "Building and maintaining production payment-platform features across backend services, admin tools and merchant interfaces.",
       descBullets: [
         "Backend APIs, transaction workflows, validation, logging and operational tooling",
-        "Admin and merchant interfaces with production-focused testing and deployment",
-        "Queue, scheduler, database and external-service integrations"
+        "Payment, payout, settlement and transfer-related features",
+        "Queue, scheduler, database and external-service integrations",
+        "UAT testing, deployment and production-focused debugging"
       ]
     },
     {
-      role: "Independent Developer & Automation Builder",
-      company: "Personal / Open Source Projects",
+      role: "IT Support",
+      company: "CISA",
+      companylogo: require("./assets/images/cisaLogo.svg"),
+      date: "Started November 2022",
+      desc:
+        "Provided hands-on IT support and troubleshooting across hardware, software, networking and day-to-day technical operations.",
+      descBullets: [
+        "Hardware and software troubleshooting",
+        "Network and workstation support",
+        "Practical user support and system maintenance"
+      ]
+    },
+    {
+      role: "Independent Developer",
+      company: "Personal & Open Source Projects",
       companylogo: require("./assets/images/automationLogo.svg"),
       date: "Ongoing",
       desc:
-        "Designing, shipping and self-hosting practical tools across bots, automation, web apps and home-server projects.",
+        "Designing, shipping and self-hosting practical projects across bots, automation, web applications and home-server tooling.",
       descBullets: [
-        "Telegram commerce, storage, management and automation systems",
-        "Discord utilities and scheduled automation",
-        "Raspberry Pi deployment, PM2 process management and Cloudflare/Tailscale networking"
+        "Telegram commerce, storage and automation systems",
+        "Discord utilities and scheduled workflows",
+        "Raspberry Pi services with PM2, Cloudflare Tunnel and Tailscale"
       ]
     }
   ]
@@ -130,7 +185,7 @@ const bigProjects = {
       image: require("./assets/images/eshopLogo.svg"),
       projectName: "Telegram E-Shop",
       projectDesc:
-        "A Telegram-based digital product shop with product inventory, wallet/deposit flows, KHQR payment handling, automated payment listening, admin tools and Raspberry Pi deployment.",
+        "A Telegram-based digital product shop with product inventory, wallet and deposit flows, KHQR payments, automated payment listening, admin tools and Raspberry Pi deployment.",
       footerLink: [
         {
           name: "GitHub",
@@ -142,7 +197,7 @@ const bigProjects = {
       image: require("./assets/images/telegramDriveLogo.svg"),
       projectName: "Telegram Drive",
       projectDesc:
-        "A Telegram-centered storage and file workflow project designed to make file management and access practical through bot/API tooling.",
+        "A Telegram-centered storage and file workflow system designed around practical bot and API access.",
       footerLink: [
         {
           name: "GitHub",
@@ -154,11 +209,23 @@ const bigProjects = {
       image: require("./assets/images/solarHomeLogo.svg"),
       projectName: "Solar Home",
       projectDesc:
-        "A self-hosted Raspberry Pi web project combining a frontend/backend service stack with process management and secure remote access.",
+        "A self-hosted Raspberry Pi web project with frontend/backend services, PM2 process management and secure remote access.",
       footerLink: [
         {
           name: "GitHub",
           url: "https://github.com/windymaster009/solarhome"
+        }
+      ]
+    },
+    {
+      image: require("./assets/images/automationLogo.svg"),
+      projectName: "Automation Projects",
+      projectDesc:
+        "Scheduled messaging, Discord utilities, browser automation and other tools built to remove repetitive manual work.",
+      footerLink: [
+        {
+          name: "GitHub Profile",
+          url: "https://github.com/windymaster009"
         }
       ]
     }
@@ -174,31 +241,40 @@ const achievementSection = {
     {
       title: "Production Self-Hosting",
       subtitle:
-        "Operate multiple services on a Raspberry Pi using Linux, PM2, tunnels and remote networking.",
+        "Operate multiple applications on a Raspberry Pi using Linux, PM2, tunnels, remote networking and automated restarts.",
       image: require("./assets/images/piHighlight.svg"),
       imageAlt: "Raspberry Pi self hosting",
       footerLink: [
-        {name: "Solar Home", url: "https://github.com/windymaster009/solarhome"}
+        {
+          name: "Solar Home",
+          url: "https://github.com/windymaster009/solarhome"
+        }
       ]
     },
     {
       title: "Automation & Bot Systems",
       subtitle:
-        "Built Telegram and Discord tools with queues, payment listeners, admin workflows and automated user flows.",
+        "Built Telegram and Discord systems with queues, payment listeners, admin workflows, scheduling and automated user flows.",
       image: require("./assets/images/botHighlight.svg"),
       imageAlt: "Automation and bots",
       footerLink: [
-        {name: "E-Shop", url: "https://github.com/windymaster009/telegrambot-py-eshop"}
+        {
+          name: "Telegram E-Shop",
+          url: "https://github.com/windymaster009/telegrambot-py-eshop"
+        }
       ]
     },
     {
       title: "Multi-Stack Builder",
       subtitle:
-        "Public GitHub projects span web development, Python, JavaScript, PHP/Laravel, bots, automation and systems tooling.",
+        "Projects span JavaScript, TypeScript, Python, Java, PHP/Laravel, Vue, React, bots, automation and systems tooling.",
       image: require("./assets/images/codeHighlight.svg"),
       imageAlt: "Multi stack development",
       footerLink: [
-        {name: "GitHub Profile", url: "https://github.com/windymaster009"}
+        {
+          name: "GitHub Profile",
+          url: "https://github.com/windymaster009"
+        }
       ]
     }
   ],
@@ -229,20 +305,20 @@ const podcastSection = {
 
 const resumeSection = {
   title: "Resume",
-  subtitle: "Feel free to download my resume",
-  display: false
+  subtitle: "View or download my resume",
+  display: true
 };
 
 const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
-    "Want to discuss software, automation, a project or an opportunity? Reach out through my GitHub profile.",
+    "Discuss a project, software, automation or just want to say hi? My inbox is open.",
   number: "",
-  email_address: ""
+  email_address: "Kevinnhim123@gmail.com"
 };
 
 const twitterDetails = {
-  userName: "",
+  userName: "nhimkevins",
   display: false
 };
 
