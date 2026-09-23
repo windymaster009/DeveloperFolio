@@ -24,11 +24,26 @@
     "format": "prettier --write \"./**/*.{js,css,json,scss}\""
   },
   "browserslist": {
-    "production": [">0.3%", "not ie 11", "not dead", "not op_mini all"],
-    "development": [">0.3%", "not ie 11", "not dead", "not op_mini all", "last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+    "production": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      ">0.3%",
+      "not ie 11",
+      "not dead",
+      "not op_mini all",
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0"
   }
 }
