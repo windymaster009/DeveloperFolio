@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 320">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#55198b"/><stop offset="1" stop-color="#ff6b9f"/></linearGradient></defs>
+  <rect width="512" height="320" rx="40" fill="url(#g)"/>
+  <circle cx="256" cy="132" r="74" fill="rgba(255,255,255,.18)"/>
+  <text x="256" y="154" text-anchor="middle" font-family="Arial,sans-serif" font-size="64" font-weight="700" fill="white">SHOP</text>
+  <rect x="120" y="235" width="272" height="14" rx="7" fill="rgba(255,255,255,.45)"/>
+</svg>

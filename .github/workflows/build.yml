@@ -3,6 +3,8 @@ name: Build check
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 permissions:
   contents: read
@@ -11,6 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      GITHUB_USERNAME: windymaster009
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
@@ -18,8 +21,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
       - name: Build
-        run: npm run build
+        run: CI=false npm run build

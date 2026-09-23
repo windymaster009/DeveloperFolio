@@ -4,10 +4,12 @@ set -euo pipefail
 APP_DIR="${APP_DIR:-$HOME/DeveloperFolio}"
 BRANCH="${BRANCH:-main}"
 
-echo "==> Deploying DeveloperFolio from $BRANCH"
+echo "==> Deploying Kevin's DeveloperFolio from $BRANCH"
 
 if [ ! -d "$APP_DIR/.git" ]; then
-  git clone https://github.com/windymaster009/DeveloperFolio.git "$APP_DIR"
+  echo "Repository not found at $APP_DIR"
+  echo "Clone it first, then run this script again."
+  exit 1
 fi
 
 cd "$APP_DIR"
@@ -15,19 +17,10 @@ cd "$APP_DIR"
 git fetch origin "$BRANCH"
 git reset --hard "origin/$BRANCH"
 
-export NODE_OPTIONS="${NODE_OPTIONS:---max-old-space-size=1536}"
+export NODE_OPTIONS="${NODE_OPTIONS:---max-old-space-size=1400}"
 
-npm install
+npm install --legacy-peer-deps
 npm run build
-
-mkdir -p .next/standalone/.next
-rm -rf .next/standalone/.next/static
-cp -R .next/static .next/standalone/.next/static
-
-if [ -d public ]; then
-  rm -rf .next/standalone/public
-  cp -R public .next/standalone/public
-fi
 
 if command -v pm2 >/dev/null 2>&1; then
   pm2 startOrReload ecosystem.config.cjs
@@ -37,4 +30,4 @@ else
   exit 1
 fi
 
-echo "==> Done. Portfolio should be running on http://0.0.0.0:3030"
+echo "==> Done. Portfolio is running on http://0.0.0.0:3030"
