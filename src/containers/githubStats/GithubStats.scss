@@ -1,0 +1,162 @@
+@import "../../_globalColor";
+
+.github-stats-main {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.github-stats-subtitle {
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.github-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.github-metric-card,
+.github-analysis-card {
+  background: $lightBackground2;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px $lightBoxShadow;
+}
+
+.github-metric-card {
+  padding: 24px 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.github-metric-card.dark-mode,
+.github-analysis-card.dark-mode {
+  background: $darkBackground;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.github-metric-value {
+  color: $buttonColor;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.github-metric-card.dark-mode .github-metric-value {
+  color: $progressBarSpanBG;
+}
+
+.github-metric-label {
+  color: $subTitle;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.github-analysis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.github-analysis-card {
+  padding: 24px;
+}
+
+.github-analysis-card h2 {
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.github-language-row {
+  margin-bottom: 16px;
+}
+
+.github-language-label {
+  display: flex;
+  justify-content: space-between;
+  color: $subTitle;
+  font-size: 0.88rem;
+  margin-bottom: 7px;
+}
+
+.github-language-label span:first-child {
+  color: $textColor;
+  font-weight: 600;
+}
+
+.github-analysis-card.dark-mode .github-language-label span:first-child,
+.github-analysis-card.dark-mode h2 {
+  color: $textColorDark;
+}
+
+.github-language-meter {
+  height: 8px;
+  background: $progressBarBackground;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.github-language-meter span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: $progressBarSpanBG;
+}
+
+.github-tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.github-tech-pill {
+  border: 1px solid $lightBorder1;
+  border-radius: 9px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.github-tech-pill span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.github-analysis-card.dark-mode .github-tech-pill span {
+  color: $textColorDark;
+}
+
+.github-tech-pill small {
+  color: $subTitle;
+  margin-top: 3px;
+}
+
+@media (max-width: 900px) {
+  .github-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .github-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .github-metric-card {
+    padding: 18px 8px;
+  }
+
+  .github-metric-value {
+    font-size: 1.6rem;
+  }
+
+  .github-tech-grid {
+    grid-template-columns: 1fr;
+  }
+}

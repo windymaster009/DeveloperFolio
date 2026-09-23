@@ -1,0 +1,9 @@
+{
+  "short_name": "Kevin Nhim",
+  "name": "Kevin Nhim Developer Portfolio",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#6c63ff",
+  "background_color": "#ffffff"
+}
