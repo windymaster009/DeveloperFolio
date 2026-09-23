@@ -61,24 +61,24 @@ const skillsSection = {
     )
   ],
   softwareSkills: [
-    {skillName: "JavaScript", fontAwesomeClassname: "fab fa-js"},
-    {skillName: "TypeScript", fontAwesomeClassname: "fas fa-code"},
-    {skillName: "Python", fontAwesomeClassname: "fab fa-python"},
-    {skillName: "Java", fontAwesomeClassname: "fab fa-java"},
-    {skillName: "PHP", fontAwesomeClassname: "fab fa-php"},
-    {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5"},
-    {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt"},
-    {skillName: "React", fontAwesomeClassname: "fab fa-react"},
-    {skillName: "Node.js", fontAwesomeClassname: "fab fa-node-js"},
-    {skillName: "Vue.js", fontAwesomeClassname: "fab fa-vuejs"},
-    {skillName: "Laravel", fontAwesomeClassname: "fab fa-laravel"},
-    {skillName: "MongoDB / DB", fontAwesomeClassname: "fas fa-database"},
-    {skillName: "Docker", fontAwesomeClassname: "fab fa-docker"},
-    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux"},
-    {skillName: "Git", fontAwesomeClassname: "fab fa-git-alt"},
-    {skillName: "Telegram", fontAwesomeClassname: "fab fa-telegram-plane"},
-    {skillName: "Discord", fontAwesomeClassname: "fab fa-discord"},
-    {skillName: "Raspberry Pi", fontAwesomeClassname: "fab fa-raspberry-pi"}
+    {skillName: "JavaScript", fontAwesomeClassname: "fab fa-js", brandColor: "#f7df1e"},
+    {skillName: "TypeScript", imageSrc: require("./assets/images/typescriptLogo.svg"), brandColor: "#3178c6"},
+    {skillName: "Python", fontAwesomeClassname: "fab fa-python", brandColor: "#3776ab"},
+    {skillName: "Java", fontAwesomeClassname: "fab fa-java", brandColor: "#007396"},
+    {skillName: "PHP", fontAwesomeClassname: "fab fa-php", brandColor: "#777bb4"},
+    {skillName: "HTML5", fontAwesomeClassname: "fab fa-html5", brandColor: "#e34f26"},
+    {skillName: "CSS3", fontAwesomeClassname: "fab fa-css3-alt", brandColor: "#1572b6"},
+    {skillName: "React", fontAwesomeClassname: "fab fa-react", brandColor: "#61dafb"},
+    {skillName: "Node.js", fontAwesomeClassname: "fab fa-node-js", brandColor: "#339933"},
+    {skillName: "Vue.js", fontAwesomeClassname: "fab fa-vuejs", brandColor: "#4fc08d"},
+    {skillName: "Laravel", fontAwesomeClassname: "fab fa-laravel", brandColor: "#ff2d20"},
+    {skillName: "MongoDB", imageSrc: require("./assets/images/mongodbLogo.svg"), brandColor: "#47a248"},
+    {skillName: "Docker", fontAwesomeClassname: "fab fa-docker", brandColor: "#2496ed"},
+    {skillName: "Linux", fontAwesomeClassname: "fab fa-linux", brandColor: "#111111"},
+    {skillName: "Git", fontAwesomeClassname: "fab fa-git-alt", brandColor: "#f05032"},
+    {skillName: "Telegram", fontAwesomeClassname: "fab fa-telegram-plane", brandColor: "#26a5e4"},
+    {skillName: "Discord", fontAwesomeClassname: "fab fa-discord", brandColor: "#5865f2"},
+    {skillName: "Raspberry Pi", fontAwesomeClassname: "fab fa-raspberry-pi", brandColor: "#a22846"}
   ],
   display: true
 };
@@ -118,10 +118,30 @@ const educationInfo = {
 const techStack = {
   viewSkillBars: true,
   experience: [
-    {Stack: "Backend / APIs", progressPercentage: "92%"},
-    {Stack: "Automation / Bots", progressPercentage: "90%"},
-    {Stack: "Frontend / Full Stack", progressPercentage: "84%"},
-    {Stack: "Linux / Self-hosting", progressPercentage: "86%"}
+    {
+      Stack: "Backend / APIs",
+      progressPercentage: "92%",
+      color: "#6c63ff",
+      description: "Services, APIs, integrations and business workflows"
+    },
+    {
+      Stack: "Automation / Bots",
+      progressPercentage: "90%",
+      color: "#26a5e4",
+      description: "Bots, queues, listeners and scheduled automation"
+    },
+    {
+      Stack: "Frontend / Full Stack",
+      progressPercentage: "84%",
+      color: "#20bf6b",
+      description: "Responsive interfaces connected to real backend systems"
+    },
+    {
+      Stack: "Linux / Self-hosting",
+      progressPercentage: "86%",
+      color: "#ff8a00",
+      description: "Raspberry Pi, PM2, tunnels and production operations"
+    }
   ],
   displayCodersrank: false
 };
@@ -168,6 +188,36 @@ const workExperiences = {
         "Discord utilities and scheduled workflows",
         "Raspberry Pi services with PM2, Cloudflare Tunnel and Tailscale"
       ]
+    },
+
+    // Three extra experience slots are ready for you.
+    // Change display to true and replace the content when you want to publish one.
+    {
+      display: false,
+      role: "Experience Slot 4",
+      company: "Add Company",
+      companylogo: require("./assets/images/automationLogo.svg"),
+      date: "Add Date",
+      desc: "Add your experience description here.",
+      descBullets: []
+    },
+    {
+      display: false,
+      role: "Experience Slot 5",
+      company: "Add Company",
+      companylogo: require("./assets/images/automationLogo.svg"),
+      date: "Add Date",
+      desc: "Add your experience description here.",
+      descBullets: []
+    },
+    {
+      display: false,
+      role: "Experience Slot 6",
+      company: "Add Company",
+      companylogo: require("./assets/images/automationLogo.svg"),
+      date: "Add Date",
+      desc: "Add your experience description here.",
+      descBullets: []
     }
   ]
 };
