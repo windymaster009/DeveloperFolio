@@ -19,12 +19,12 @@ import Profile from "./profile/Profile";
 import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../portfolio";
 import {StyleProvider} from "../contexts/StyleContext";
-import {useLocalStorage} from "../hooks/useLocalStorage";
 import "./Main.scss";
 
 const Main = () => {
-  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  // Light mode only for now. Keeping StyleContext lets the existing
+  // DeveloperFolio components continue to work without dark-mode branches.
+  const isDark = false;
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
 
   useEffect(() => {
@@ -37,11 +37,11 @@ const Main = () => {
     }
   }, []);
 
-  const changeTheme = () => setIsDark(!isDark);
+  const changeTheme = () => {};
 
   return (
-    <div className={isDark ? "dark-mode" : null}>
-      <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
+    <div>
+      <StyleProvider value={{isDark, changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
         ) : (
