@@ -117,6 +117,7 @@ const educationInfo = {
       logo: "https://image.freshnewsasia.com/2017/114/fn-2017-08-21-07-05-06-6.jpg",
       imageType: "photo",
       accentColor: "#c83436",
+      schoolLink: "https://phnompenhthmeyhighschool.blogspot.com/",
       subHeader: "High School",
       duration: "2007 - 2019",
       desc:
