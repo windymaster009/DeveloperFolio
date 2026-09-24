@@ -1,72 +1,82 @@
-import React, {createRef, useContext} from "react";
-import {Fade, Slide} from "react-reveal";
+import React from "react";
+import {Fade} from "react-reveal";
 import "./EducationCard.scss";
-import StyleContext from "../../contexts/StyleContext";
 
-export default function EducationCard({school}) {
-  const imgRef = createRef();
-
-  const GetDescBullets = ({descBullets}) => {
-    return descBullets
+export default function EducationCard({school, index = 0}) {
+  const GetDescBullets = ({descBullets}) =>
+    descBullets
       ? descBullets.map((item, i) => (
-          <li key={i} className="subTitle">
+          <li key={i} className="education-bullet">
             {item}
           </li>
         ))
       : null;
-  };
-  const {isDark} = useContext(StyleContext);
 
-  if (!school.logo)
-    console.error(`Image of ${school.name} is missing in education section`);
+  const accent = school.accentColor || "#645beb";
+  const isPhoto = school.imageType === "photo";
+  const cardClass = [
+    "education-card",
+    isPhoto ? "education-card-photo" : "education-card-logo",
+    index % 2 ? "education-card-reverse" : ""
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div>
-      <Fade left duration={1000}>
-        <div className="education-card">
-          {school.logo && (
-            <div className="education-card-left">
-              <img
-                crossOrigin={"anonymous"}
-                ref={imgRef}
-                className="education-roundedimg"
-                src={school.logo}
-                alt={school.schoolName}
-              />
-            </div>
-          )}
-          <div className="education-card-right">
-            <h5 className="education-text-school">{school.schoolName}</h5>
+    <Fade
+      bottom
+      duration={850}
+      delay={index * 130}
+      distance="28px"
+    >
+      <article
+        className={cardClass}
+        style={{"--school-accent": accent}}
+      >
+        <span className="education-step" aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
 
-            <div className="education-text-details">
-              <h5
-                className={
-                  isDark
-                    ? "dark-mode education-text-subHeader"
-                    : "education-text-subHeader"
-                }
-              >
-                {school.subHeader}
-              </h5>
-              <p
-                className={`${
-                  isDark ? "dark-mode" : ""
-                } education-text-duration`}
-              >
-                {school.duration}
-              </p>
-              <p className="education-text-desc">{school.desc}</p>
-              <div className="education-text-bullets">
-                <ul>
-                  <GetDescBullets descBullets={school.descBullets} />
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div className="education-card-media">
+          <div className="education-media-glow" aria-hidden="true"></div>
+          <img
+            crossOrigin="anonymous"
+            className="education-school-image"
+            src={school.logo}
+            alt={school.schoolName}
+          />
         </div>
-      </Fade>
-      <Slide left duration={2000}>
-        <div className="education-card-border"></div>
-      </Slide>
-    </div>
+
+        <div className="education-card-content">
+          <div className="education-card-topline">
+            <span className="education-duration">{school.duration}</span>
+            <span className="education-stage">
+              {school.subHeader}
+            </span>
+          </div>
+
+          <h3 className="education-text-school">{school.schoolName}</h3>
+
+          <p className="education-text-desc">{school.desc}</p>
+
+          {school.descBullets && school.descBullets.length > 0 && (
+            <ul className="education-text-bullets">
+              <GetDescBullets descBullets={school.descBullets} />
+            </ul>
+          )}
+
+          {school.schoolLink && (
+            <a
+              className="education-school-link"
+              href={school.schoolLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit school <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </article>
+    </Fade>
   );
 }
