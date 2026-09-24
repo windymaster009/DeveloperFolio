@@ -75,3 +75,5 @@ fetch.js
 DeveloperFolio is licensed under the GNU General Public License v3.0. This modified version remains under GPL-3.0. See `LICENSE`.
 
 Original project: **saadpasta/developerFolio**.
+
+Additional same-family Lottie assets (`rocket.json`, `laptopWorking.json`, and `hi.json`) were adapted from **ayushy11/devPortfolio**, which is also distributed under GPL-3.0. These assets are used for the Education, Experience, and Contact sections.
