@@ -4,6 +4,8 @@ import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import {workExperiences} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
+import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import laptopWorking from "../../assets/lottie/laptopWorking.json";
 
 export default function WorkExperience() {
   const {isDark} = useContext(StyleContext);
@@ -21,7 +23,18 @@ export default function WorkExperience() {
       <Fade bottom duration={1000} distance="20px">
         <div className="experience-container" id="workExperience">
           <div>
-            <h1 className="experience-heading">Experiences</h1>
+            <div className="experience-heading-row">
+              <div>
+                <h1 className="experience-heading">Experiences</h1>
+                <p className="experience-subtitle">
+                  Production work, IT operations, independent projects, and the systems I keep building around them.
+                </p>
+              </div>
+              <div className="experience-lottie" aria-hidden="true">
+                <DisplayLottie animationData={laptopWorking} />
+              </div>
+            </div>
+
             <div className="experience-cards-div">
               {visibleExperiences.map((card, i) => (
                 <ExperienceCard
