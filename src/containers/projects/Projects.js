@@ -4,6 +4,9 @@ import Button from "../../components/button/Button";
 import {openSource, socialMediaLinks} from "../../portfolio";
 import StyleContext from "../../contexts/StyleContext";
 import Loading from "../../containers/loading/Loading";
+import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import buildAnimation from "../../assets/lottie/build.json";
+
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
@@ -11,7 +14,6 @@ export default function Projects() {
   const FailedLoading = () => null;
   const renderLoader = () => <Loading />;
   const [repo, setrepo] = useState([]);
-  // todo: remove useContex because is not supported
   const {isDark} = useContext(StyleContext);
 
   useEffect(() => {
@@ -39,6 +41,7 @@ export default function Projects() {
   function setrepoFunction(array) {
     setrepo(array);
   }
+
   if (
     !(typeof repo === "string" || repo instanceof String) &&
     openSource.display
@@ -46,19 +49,33 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+          <div className="project-heading-row">
+            <div className="project-heading-copy">
+              <h1 className="project-title">Open Source Projects</h1>
+              <p className="project-subtitle">
+                Repositories that show the actual code behind the bots, web apps, automation and systems I build.
+              </p>
+            </div>
+            <div className="project-lottie" aria-hidden="true">
+              <DisplayLottie animationData={buildAnimation} />
+            </div>
+          </div>
+
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {
                 console.error(
                   `Github Object for repository number : ${i} is undefined`
                 );
+                return null;
               }
+
               return (
                 <GithubRepoCard repo={v} key={v.node.id} isDark={isDark} />
               );
             })}
           </div>
+
           <Button
             text={"More Projects"}
             className="project-button"
@@ -68,7 +85,7 @@ export default function Projects() {
         </div>
       </Suspense>
     );
-  } else {
-    return <FailedLoading />;
   }
+
+  return <FailedLoading />;
 }
