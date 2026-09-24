@@ -1,3 +1,5 @@
+@import "../../_globalColor";
+
 .experience-cards-div {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -7,31 +9,87 @@
 .experience-heading {
   font-size: 56px;
   font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.experience-subtitle {
+  max-width: 680px;
+  margin: 0;
+  color: $subTitle;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.experience-heading-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(220px, 360px);
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 28px;
+  padding: 24px 30px;
+  border: 1px solid #ececf2;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 12%, rgba(85, 25, 139, 0.10), transparent 38%),
+    #ffffff;
+  box-shadow: 0 12px 30px rgba(23, 28, 40, 0.05);
+}
+
+.experience-lottie {
+  width: 100%;
+  max-width: 340px;
+  justify-self: end;
 }
 
 .experience-container {
   display: flex;
   width: 90%;
   padding: 20px 10px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
 }
 
 .experience-container > * {
   flex: 1;
 }
 
-/* Media Query */
-
 @media (max-width: 1380px) {
   .experience-heading {
     font-size: 40px;
   }
+
+  .experience-subtitle {
+    font-size: 17px;
+  }
+
+  .experience-lottie {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
+  .experience-container {
+    width: calc(100% - 30px);
+    padding-inline: 0;
+  }
+
+  .experience-heading-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
   .experience-heading {
     font-size: 30px;
     text-align: center;
+  }
+
+  .experience-subtitle {
+    font-size: 15px;
+  }
+
+  .experience-lottie {
+    max-width: 240px;
+    justify-self: center;
   }
 }
