@@ -88,10 +88,10 @@ const educationInfo = {
   schools: [
     {
       schoolName: "National Polytechnic Institute of Cambodia (NPIC)",
-      logo: "https://colab.ws/storage/images/resized/NIQsTABNgGctewl2LsZgVsEHTfZKYnsME2MsO3dh_medium.webp",
+      logo: "https://pbs.twimg.com/media/DUR8h5IX4AAhV0V.jpg",
       imageType: "logo",
       accentColor: "#273b97",
-      schoolLink: "https://npic.edu.kh/",
+      schoolLink: "https://npic.edu.kh/en/",
       subHeader: "Computer Science",
       duration: "2020 - 2024",
       desc:
@@ -103,7 +103,7 @@ const educationInfo = {
     },
     {
       schoolName: "Paññāsāstra University of Cambodia (PUC)",
-      logo: "https://www.puc.edu.kh/wp-content/uploads/2024/09/logo-tran.png",
+      logo: "https://www.puc.edu.kh/wp-content/uploads/2024/09/Logo-4.jpg",
       imageType: "logo",
       accentColor: "#173b9a",
       schoolLink: "https://www.puc.edu.kh/",
@@ -114,10 +114,9 @@ const educationInfo = {
     },
     {
       schoolName: "Samdech Hun Sen Phnom Penh Thmey High School",
-      logo: "https://image.freshnewsasia.com/2017/114/fn-2017-08-21-07-05-06-6.jpg",
+      logo: "/schools/highschool.jpg",
       imageType: "photo",
       accentColor: "#c83436",
-      schoolLink: "https://phnompenhthmeyhighschool.blogspot.com/",
       subHeader: "High School",
       duration: "2007 - 2019",
       desc:
