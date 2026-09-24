@@ -1,50 +1,99 @@
+@import "../../_globalColor";
+
 .education-heading {
   font-size: 56px;
   font-weight: 400;
+  margin: 0 0 10px;
 }
 
 .education-section {
   display: flex;
   flex-direction: column;
   width: 90%;
-  padding: 20px 0px;
-  margin: 0px auto;
-  margin-top: 2rem;
+  padding: 30px 0;
+  margin: 2rem auto 0;
 }
 
 .education-section > * {
   flex: 1;
-  margin-bottom: 30px;
+}
+
+.education-heading-row {
+  display: grid;
+  grid-template-columns: 1fr minmax(180px, 300px);
+  align-items: center;
+  gap: 42px;
+  margin-bottom: 26px;
+  padding: 22px 28px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(108, 99, 255, 0.12), transparent 42%),
+    #ffffff;
+  border: 1px solid #ececf2;
+  box-shadow: 0 12px 30px rgba(23, 28, 40, 0.05);
+}
+
+.education-kicker {
+  max-width: 640px;
+  margin: 0;
+  color: $subTitle;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.education-lottie {
+  max-width: 270px;
+  width: 100%;
+  justify-self: end;
 }
 
 .education-card-container {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 8px;
 }
 
 @media (max-width: 1380px) {
-  .education-card-container {
-    padding-top: 0px;
-  }
   .education-heading {
     font-size: 40px;
   }
-  .education-text-subtitle {
-    font-size: 18px;
-    text-align: center;
+
+  .education-kicker {
+    font-size: 17px;
+  }
+
+  .education-lottie {
+    max-width: 220px;
   }
 }
 
 @media (max-width: 768px) {
-  .education-card-container {
-    padding-top: 0px;
+  .education-section {
+    width: calc(100% - 30px);
   }
+
+  .education-heading-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
   .education-heading {
     font-size: 30px;
     text-align: center;
   }
-  .education-text-subtitle {
-    font-size: 16px;
+
+  .education-kicker {
+    font-size: 15px;
+  }
+
+  .education-lottie {
+    max-width: 190px;
+    justify-self: center;
+  }
+
+  .education-card-container {
+    padding-top: 0;
   }
 }
