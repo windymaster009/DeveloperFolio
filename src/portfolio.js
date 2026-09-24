@@ -87,8 +87,11 @@ const educationInfo = {
   display: true,
   schools: [
     {
-      schoolName: "National Polytechnic Institute of Cambodia",
-      logo: require("./assets/images/npicLogo.svg"),
+      schoolName: "National Polytechnic Institute of Cambodia (NPIC)",
+      logo: "https://colab.ws/storage/images/resized/NIQsTABNgGctewl2LsZgVsEHTfZKYnsME2MsO3dh_medium.webp",
+      imageType: "logo",
+      accentColor: "#273b97",
+      schoolLink: "https://npic.edu.kh/",
       subHeader: "Computer Science",
       duration: "2020 - 2024",
       desc:
@@ -99,18 +102,25 @@ const educationInfo = {
       ]
     },
     {
-      schoolName: "Paññāsāstra University of Cambodia",
-      logo: require("./assets/images/pucLogo.svg"),
+      schoolName: "Paññāsāstra University of Cambodia (PUC)",
+      logo: "https://www.puc.edu.kh/wp-content/uploads/2024/09/logo-tran.png",
+      imageType: "logo",
+      accentColor: "#173b9a",
+      schoolLink: "https://www.puc.edu.kh/",
       subHeader: "Loyola School",
       duration: "2018 - 2020",
-      desc: "Secondary education before continuing into Computer Science."
+      desc:
+        "Continued my secondary education in an English-focused academic environment before moving into Computer Science."
     },
     {
-      schoolName: "Phnom Penh Thmey High School",
-      logo: require("./assets/images/schoolLogo.svg"),
+      schoolName: "Samdech Hun Sen Phnom Penh Thmey High School",
+      logo: "https://image.freshnewsasia.com/2017/114/fn-2017-08-21-07-05-06-6.jpg",
+      imageType: "photo",
+      accentColor: "#c83436",
       subHeader: "High School",
       duration: "2007 - 2019",
-      desc: "Earlier general education in Phnom Penh, Cambodia."
+      desc:
+        "My earlier school years in Phnom Penh before continuing into university and Computer Science."
     }
   ]
 };
