@@ -16,9 +16,11 @@ export default function Education() {
       <Fade bottom duration={900} distance="20px">
         <div className="education-heading-row">
           <div className="education-heading-copy">
+            <p className="education-overline">MY EDUCATION JOURNEY</p>
             <h1 className="education-heading">Education</h1>
             <p className="education-kicker">
-              Computer Science foundation, practical learning, and continuous self-study.
+              From high school to university and Computer Science — the places
+              that shaped how I learn, build and solve problems.
             </p>
           </div>
           <div className="education-lottie" aria-hidden="true">
@@ -29,7 +31,11 @@ export default function Education() {
 
       <div className="education-card-container">
         {educationInfo.schools.map((school, index) => (
-          <EducationCard key={index} school={school} />
+          <EducationCard
+            key={school.schoolName}
+            school={school}
+            index={index}
+          />
         ))}
       </div>
     </div>
